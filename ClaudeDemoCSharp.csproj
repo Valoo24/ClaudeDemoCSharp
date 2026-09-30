@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ClaudeDemo</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>fdb00891-70c8-4028-be15-c234fdc96c6d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Official Anthropic SDK for .NET (NuGet package "Anthropic").
+         Update with `dotnet add package Anthropic` if a newer version exists. -->
+    <PackageReference Include="Anthropic" Version="12.50.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <!-- Standard .NET logging (ILogger) + console output, used by LoggedChat. -->
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Copies the asset/ folder (the Vision bonus image) next to the executable
+         on every build, so the path works no matter how the program is run. -->
+    <Content Include="asset\**" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.local.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('appsettings.local.json')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MCPTools\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>

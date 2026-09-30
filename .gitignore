@@ -1,0 +1,53 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+publish/
+artifacts/
+
+# Local configuration and secrets (API keys, agent / skill IDs)
+appsettings.local.json
+appsettings.*.local.json
+*.user
+.env
+.env.*
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.suo
+*.userprefs
+*.DotSettings.user
+*.rsuser
+
+# Presentation assets (PDF, screenshots)
+/asset/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Test results and coverage
+TestResults/
+[Tt]est[Rr]esult*/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
