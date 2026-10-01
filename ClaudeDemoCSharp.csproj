@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>ClaudeDemo</RootNamespace>
@@ -15,7 +15,7 @@
          Update with `dotnet add package Anthropic` if a newer version exists. -->
     <PackageReference Include="Anthropic" Version="12.50.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.12" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.12" />
     <!-- Standard .NET logging (ILogger) + console output, used by LoggedChat. -->
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.12" />
   </ItemGroup>

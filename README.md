@@ -7,7 +7,7 @@ batches.
 
 ## Prerequisites
 
-- .NET 8 SDK
+- .NET 10 SDK
 - A Claude API key, either in `appsettings.local.json` or in the
   `ANTHROPIC_API_KEY` environment variable
 - The official `Anthropic` NuGet package, already referenced in the `.csproj`

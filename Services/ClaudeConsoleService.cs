@@ -1,4 +1,5 @@
 using Anthropic;
+using Anthropic.Models.Beta;
 using Anthropic.Models.Beta.Sessions;
 using Anthropic.Models.Beta.Sessions.Events;
 using Microsoft.Extensions.Logging;
@@ -30,6 +31,15 @@ public class ClaudeConsoleService(AnthropicClient client, ILogger<ClaudeConsoleS
             Agent = agentId,
             EnvironmentID = environmentId,
             Title = title,
+            Budget = new BetaManagedAgentsBudgetLimit
+            {
+                MaxListCost = new BetaMonetaryAmount
+                {
+                    Amount = "25",
+                    Currency = "USD",
+                },
+                Type = BetaManagedAgentsBudgetLimitType.Limit,
+            },
             Resources =
             [
                 new BetaManagedAgentsMemoryStoreResourceParam
