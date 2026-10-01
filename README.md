@@ -5,6 +5,9 @@ scenarios, one per feature of the official `Anthropic` NuGet package, in the
 order of the presentation: messages, tools and MCP, Skills, Managed Agents, then
 batches.
 
+The slides of the presentation are in `DemoPresentation/`
+(`Claude_API_Presentation_v9.pptx`).
+
 ## Prerequisites
 
 - .NET 10 SDK
@@ -172,6 +175,7 @@ Scenarios 9 and 10 share `Scenarios/ManagedAgentScenario.cs`.
 | `Services/` | `ClaudeConsoleService` (Managed Agents sessions and events), the `StreamDisplayService` and `SessionDisplayService` display modes, the console logger and the batch ID store |
 | `MCPTools/` | The tools and sub-agents used by the `ToolRunner` scenarios |
 | `Const/` | The system prompts |
+| `DemoPresentation/` | The PowerPoint of the presentation (not used by the C# code) |
 | `skills/` | The sources of the custom Skills, to upload to the Claude Console (not used by the C# code) |
 
 ## Notes
