@@ -1,0 +1,9 @@
+{
+  "caps": {
+    "meals": 25,
+    "transport": null,
+    "lodging": 150,
+    "equipment": 150,
+    "other": 50
+  }
+}

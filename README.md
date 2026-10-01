@@ -105,10 +105,21 @@ outside the scenarios.
 
 8. **Custom Skill**: the `expense-compliance-check` Skill, uploaded once in the
    Claude Console, is referenced by its ID in the request container with the
-   code execution tool enabled. The Skill (sources in `../skills/`) checks an
+   code execution tool enabled. The Skill (sources in `skills/`) checks an
    expense against fixed caps and always returns the same verdict for the same
    input. The response is displayed with `StreamDisplayMode`: the full thought
    process, or only the final answer.
+
+> **The `skills/` folder.** It holds the source of every Skill used by
+> scenarios 8, 9 and 10, one sub-folder each (`SKILL.md`, plus `scripts/`,
+> `references/` and `assets/` when needed): `expense-compliance-check` for
+> scenarios 8 and 9, and the single-purpose Skills of the scenario 10 workflow
+> (`expense-categorization`, `currency-conversion`, `compliance-check`,
+> `expense-audit-log`, `expense-approval-notification`,
+> `expense-receipt-extraction`). The C# code never reads this folder: the Skills
+> run from the Claude Console, so each one must be uploaded there once (zip the
+> sub-folder, with `SKILL.md` at its root), and its ID put in
+> `appsettings.local.json`. Re-upload a Skill after editing its sources here.
 
 ### Managed Agents (beta)
 
@@ -161,6 +172,7 @@ Scenarios 9 and 10 share `Scenarios/ManagedAgentScenario.cs`.
 | `Services/` | `ClaudeConsoleService` (Managed Agents sessions and events), the `StreamDisplayService` and `SessionDisplayService` display modes, the console logger and the batch ID store |
 | `MCPTools/` | The tools and sub-agents used by the `ToolRunner` scenarios |
 | `Const/` | The system prompts |
+| `skills/` | The sources of the custom Skills, to upload to the Claude Console (not used by the C# code) |
 
 ## Notes
 
